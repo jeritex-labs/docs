@@ -1,0 +1,1756 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="images/favicon-a4e1ec27.ico" rel="icon" type="image/ico" />
+        <meta
+            name="description"
+            content="Documentation for the Jeritex API, Jeritex API documentation"
+        >
+    <title>Jeritex API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-4a59a6a0.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-608cc2bb.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <header class="top-nav">
+      <div class="top-menu">
+      <a href="/" class="logo-link" target="_self">
+        <img src="images/logo-a015034a.png" class="logo" alt="" />
+      </a>
+        <ul class="con">
+          <li><a href="/" class="selected">Spot</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="toc-wrapper">
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-key-setup" class="toc-h2 toc-link" data-title="API Key Setup">API Key Setup</a>
+                  </li>
+                  <li>
+                    <a href="#api-key-restrictions" class="toc-h2 toc-link" data-title="API Key Restrictions">API Key Restrictions</a>
+                  </li>
+                  <li>
+                    <a href="#enabling-accounts" class="toc-h2 toc-link" data-title="Enabling Accounts">Enabling Accounts</a>
+                  </li>
+                  <li>
+                    <a href="#general-api-information" class="toc-h2 toc-link" data-title="General API Information">General API Information</a>
+                  </li>
+                  <li>
+                    <a href="#contact-us" class="toc-h2 toc-link" data-title="Contact Us">Contact Us</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#parameters-for-authenticated-endpoints" class="toc-h2 toc-link" data-title="Parameters for Authenticated Endpoints">Parameters for Authenticated Endpoints</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-request" class="toc-h2 toc-link" data-title="Create A Request">Create A Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#market-data-endpoints" class="toc-h1 toc-link" data-title="Market Data Endpoints">Market Data Endpoints</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#test-connectivity" class="toc-h2 toc-link" data-title="Test Connectivity">Test Connectivity</a>
+                  </li>
+                  <li>
+                    <a href="#check-server-time" class="toc-h2 toc-link" data-title="Check Server Time">Check Server Time</a>
+                  </li>
+                  <li>
+                    <a href="#all-market-tickers" class="toc-h2 toc-link" data-title="All Market Tickers">All Market Tickers</a>
+                  </li>
+                  <li>
+                    <a href="#specific-market-ticker" class="toc-h2 toc-link" data-title="Specific Market Ticker">Specific Market Ticker</a>
+                  </li>
+                  <li>
+                    <a href="#order-book" class="toc-h2 toc-link" data-title="Order Book">Order Book</a>
+                  </li>
+                  <li>
+                    <a href="#kline-candlestick-data" class="toc-h2 toc-link" data-title="Kline/Candlestick Data">Kline/Candlestick Data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#spot-trade" class="toc-h1 toc-link" data-title="Spot Trade">Spot Trade</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#test-connectivity-trade-api" class="toc-h2 toc-link" data-title="Test connectivity trade API">Test connectivity trade API</a>
+                  </li>
+                  <li>
+                    <a href="#create-order" class="toc-h2 toc-link" data-title="Create Order">Create Order</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-all-open-orders-on-a-symbol" class="toc-h2 toc-link" data-title="Cancel all Open Orders on a Symbol">Cancel all Open Orders on a Symbol</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-an-order" class="toc-h2 toc-link" data-title="Cancel an order">Cancel an order</a>
+                  </li>
+                  <li>
+                    <a href="#trade-history" class="toc-h2 toc-link" data-title="Trade history">Trade history</a>
+                  </li>
+                  <li>
+                    <a href="#order-detail" class="toc-h2 toc-link" data-title="Order detail">Order detail</a>
+                  </li>
+                  <li>
+                    <a href="#current-open-orders" class="toc-h2 toc-link" data-title="Current Open Orders">Current Open Orders</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#accounts-wallet-apis" class="toc-h1 toc-link" data-title="Accounts/Wallet APIs">Accounts/Wallet APIs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#user-asset" class="toc-h2 toc-link" data-title="User Asset">User Asset</a>
+                  </li>
+                  <li>
+                    <a href="#account-info" class="toc-h2 toc-link" data-title="Account Info">Account Info</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#enum-definitions" class="toc-h1 toc-link" data-title="Enum definitions">Enum definitions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#side-side" class="toc-h2 toc-link" data-title="Side (side)">Side (side)</a>
+                  </li>
+                  <li>
+                    <a href="#order-type-order_type" class="toc-h2 toc-link" data-title="Order type (order_type)">Order type (order_type)</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1><h2 id='api-key-setup'>API Key Setup</h2>
+<!-- TODO: fix link -->
+
+<ul>
+<li>Some endpoints will require an API Key. Please refer to <a href="https://jeritexeu.com/api-key">this page</a> regarding API key creation.</li>
+<li>Once API key is created, it is recommended to set IP restrictions on the key for security reasons.</li>
+<li>Never share your API key/secret key to ANYONE.</li>
+</ul>
+
+<aside class="warning">
+ If the API keys were accidentally shared, please delete them immediately and create a new key.
+</aside>
+<h2 id='api-key-restrictions'>API Key Restrictions</h2>
+<ul>
+<li>After creating the API key, the default restrictions is Enable Reading.</li>
+<li>To <strong>enable withdrawals via the API</strong>, the API key restriction needs to be modified through the Jeritex UI.</li>
+</ul>
+<h2 id='enabling-accounts'>Enabling Accounts</h2>
+<p>A <code>SPOT</code> account is provided by default upon creation of a Jeritex Account.</p>
+<h2 id='general-api-information'>General API Information</h2>
+<ul>
+<li>The base endpoint is: <strong><a href="https://api-v2.jeritexeu.com/api/v1/">https://api-v2.jeritexeu.com/api/v1/</a></strong></li>
+<li>All endpoints return either a JSON object or array.</li>
+<li>All time and timestamp related fields are in milliseconds.</li>
+</ul>
+<h2 id='contact-us'>Contact Us</h2>
+<ul>
+<li><a href="https://t.me/jeritex">Jeritex API Telegram Group</a>
+
+<ul>
+<li>For any questions in sudden drop in performance with the API and/or Websockets.</li>
+<li>For any general questions about the API not covered in the documentation.</li>
+</ul></li>
+</ul>
+<h1 id='authentication'>Authentication</h1>
+<aside class="notice">
+<!-- TODO: fix link -->
+Please visit <a href='https://jeritexeu.com/api-key'>this page</a> to generate an API key
+</aside>
+
+<aside class="notice">
+All requests made to private endpoints must be authenticated. Requests made to public endpoints do not require additional authentication.
+</aside>
+<h2 id='parameters-for-authenticated-endpoints'>Parameters for Authenticated Endpoints</h2><h3 id='api-key'>API Key</h3>
+<ul>
+<li>API-keys are passed into the Rest API via the <code>X-JRT-APIKEY</code> header.</li>
+<li>API-keys can be configured to only access certain types of secure endpoints. For example, one API-key could be used for TRADE only, while another API-key can access everything except for TRADE routes.</li>
+<li>By default, API-keys can access all secure routes.</li>
+</ul>
+
+<aside class="warning">
+API-keys and secret-keys are case sensitive.
+</aside>
+<h3 id='parameters'>Parameters</h3>
+<p>The following parameters must be used for authentication:</p>
+
+<ul>
+<li><strong>timestamp</strong>: UTC timestamp in milliseconds</li>
+<li><strong>signature</strong>: Base64 encoded HMAC-SHA256 signature of the request body using the secret key.</li>
+</ul>
+
+<p>We also provide <code>recvWindow</code> (unit in millisecond and default value is 5,000) to specify how Long an HTTP request is valid. It is also used to prevent replay attacks. Maximum allowed value is 60,000.</p>
+
+<p>A smaller <code>recvWindow</code> is more secure, but your request may fail if the transmission time is greater than your <code>recvWindow</code>.</p>
+
+<p>Please make sure that your timestamp is in sync with our server time. You can use the <a href="/#check-server-time">Server Time endpoint</a>.</p>
+
+<aside class="warning">
+ Please make sure that the timestamp parameter adheres to the following rule: serverTime - recvWindow <= timestamp < serverTime + 1000; serverTime stands for Jeritex server time, which can be queried via the <a href='/#check-server-time'>Server Time endpoint.</a>
+</aside>
+<h2 id='create-a-request'>Create A Request</h2>
+<ol>
+<li>Concatenate all the public parameters in the query string format. This will be used to generate the <code>signature</code>.</li>
+<li>Use the HMAC_SHA256 algorithm to sign the query string in step 1, and convert it to a hex string to obtain the signature parameter.</li>
+<li>Append the sign parameter to the end of the parameters string, and send the HTTP request. Note that the message format for GET and POST requests is different. Please refer to the examples.</li>
+</ol>
+<h3 id='signed-endpoint-examples-for-get-trade-history'>SIGNED Endpoint Examples for GET /trade/history</h3>
+<p>Here is a step-by-step example of how to send a valid signed payload from the Linux command line using echo, openssl, and curl.</p>
+
+<table><thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apiKey</td>
+<td>g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP</td>
+</tr>
+<tr>
+<td>secretKey</td>
+<td>OQqHHLH52AR6iHsoYLffDsO8H9qEa92cBVdq6T5Ir0a1oLNekaWdwwmuOwLmmksA</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+Just example keys, please use your own keys.
+</aside>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># HMAC SHA256 signature:</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"symbol=BTC/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000"</span> |  openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="s2">"OQqHHLH52AR6iHsoYLffDsO8H9qEa92cBVdq6T5Ir0a1oLNekaWdwwmuOwLmmksA"</span>
+<span class="o">(</span>stdin<span class="o">)=</span> 30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>  curl <span class="nt">-H</span> <span class="s2">"X-JRT-APIKEY"</span>: g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP<span class="s2">" -X GET 'https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=BTC%2FUSDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000&amp;signature=30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184'
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">hmac</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlencode</span>
+
+
+<span class="n">api_key</span> <span class="o">=</span> <span class="s">"g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP"</span>
+<span class="n">api_secret</span> <span class="o">=</span> <span class="s">"OQqHHLH52AR6iHsoYLffDsO8H9qEa92cBVdq6T5Ir0a1oLNekaWdwwmuOwLmmksA"</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1"</span>
+
+
+<span class="k">def</span> <span class="nf">timestamp</span><span class="p">():</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">encoded_string</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">urlencode</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_get_sign</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">hmac</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">api_secret</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">data</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">),</span> <span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">signed_request</span><span class="p">(</span><span class="n">url_path</span><span class="p">,</span> <span class="n">payload</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="n">query_string</span> <span class="o">=</span> <span class="n">urlencode</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">query_string</span><span class="p">:</span>
+        <span class="n">query_string</span> <span class="o">=</span> <span class="s">"{}&amp;timestamp={}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">query_string</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">query_string</span> <span class="o">=</span> <span class="s">"timestamp={}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">timestamp</span><span class="p">())</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">base_url</span> <span class="o">+</span> <span class="n">url_path</span> <span class="o">+</span> <span class="s">"?"</span> <span class="o">+</span> <span class="n">query_string</span> <span class="o">+</span> <span class="s">"&amp;signature="</span> <span class="o">+</span> <span class="n">_get_sign</span><span class="p">(</span><span class="n">query_string</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"symbol"</span><span class="p">:</span> <span class="s">"BTC/USDT"</span><span class="p">,</span>
+    <span class="s">"pageNo"</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span>
+    <span class="s">"pageSize"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">"recvWindow"</span><span class="p">:</span>  <span class="mi">60000</span>
+<span class="p">}</span>
+<span class="n">signed_request</span><span class="p">(</span><span class="s">"/trade/history"</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>BTC/USDT</td>
+</tr>
+<tr>
+<td>pageNo</td>
+<td>0</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>20</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>1657861196487</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><strong>queryString:</strong></li>
+</ul>
+
+<p><code>symbol=BTC/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000</code></p>
+<h1 id='market-data-endpoints'>Market Data Endpoints</h1><h2 id='test-connectivity'>Test Connectivity</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/ping'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/ping"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<p>Test connectivity to the Rest API.</p>
+
+<p>GET
+<code>/public/ping</code></p>
+<h3 id='parameters'>Parameters</h3>
+<p>No parameters</p>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='check-server-time'>Check Server Time</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/time'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/time"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<p>Test connectivity to the Rest API and get the current server time.</p>
+
+<p>GET
+<code>/public/time</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<p>No parameters</p>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"serverTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1657727196288</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='all-market-tickers'>All Market Tickers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/tickers'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/tickers"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<p>All market tickers with statistics in 24 hours.</p>
+
+<p>GET
+<code>/public/tickers</code></p>
+<h3 id='parameters-3'>Parameters</h3>
+<p>No parameters</p>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">19467.44</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">20420.99</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">19250.48</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">20030.3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0293</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mf">562.86</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1722.7730</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">19467.44</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">20030.3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">324695303.32295424621914948654</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SFT/USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00120001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00125100</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00119010</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00124000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0337</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00003999</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">31185153.1086</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00120125</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00124000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">410167.082020309946</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='specific-market-ticker'>Specific Market Ticker</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/ticker?symbol=BTC/USDT'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/ticker?symbol=BTC/USDT"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<p>Latest statistics for a symbol.</p>
+
+<p>GET
+<code>/public/ticker</code></p>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Symbol</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">19467.44</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">20420.99</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">19250.48</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">19966.36</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0260</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mf">498.92</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1722.9729</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">19467.44</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">19966.36</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">324872799.77115424621914948654</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='order-book'>Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/orderbook/L2?symbol=BTC/USDT'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/orderbook/L2?symbol=BTC/USDT"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<p>Order book of specific symbol</p>
+
+<p>GET
+<code>/public/orderbook/L2</code></p>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Symbol</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19974.29</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5946</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19974.97</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0003</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19974.28</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5741</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19972.8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1502</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='kline-candlestick-data'>Kline/Candlestick Data</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/kline?symbol=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/kline?symbol=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<p>Kline/candlestick bars for a symbol.</p>
+
+<p>Klines are uniquely identified by their open time.</p>
+
+<p>GET
+<code>/public/kline</code></p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Yes</td>
+<td>Symbol</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>string</td>
+<td>Yes</td>
+<td>Interval of Kline data. Valid values: 1min, 5min, 15min, 30min, 1hour, 4hour, 1day, 1mon, 1week, 1year</td>
+</tr>
+<tr>
+<td>from</td>
+<td>$int64</td>
+<td>No</td>
+<td>start time</td>
+</tr>
+<tr>
+<td>to</td>
+<td>$int64</td>
+<td>No</td>
+<td>end time</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>Limit the number of returned Klines. Default is 500.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+    If <code>from</code> and <code>to</code> are not sent, the most recent klines are returned.
+</aside>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="mi">1638103320000</span><span class="p">,</span><span class="w">
+      </span><span class="mf">54410.77</span><span class="p">,</span><span class="w">
+      </span><span class="mf">54410.77</span><span class="p">,</span><span class="w">
+      </span><span class="mf">54410.76</span><span class="p">,</span><span class="w">
+      </span><span class="mf">54410.76</span><span class="p">,</span><span class="w">
+      </span><span class="mf">0.000822999932917692</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="mi">1638103380000</span><span class="p">,</span><span class="w">
+      </span><span class="mf">54410.77</span><span class="p">,</span><span class="w">
+      </span><span class="mf">54440.16</span><span class="p">,</span><span class="w">
+      </span><span class="mf">54410.75</span><span class="p">,</span><span class="w">
+      </span><span class="mf">54410.75</span><span class="p">,</span><span class="w">
+      </span><span class="mf">3.6218707025782133</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='spot-trade'>Spot Trade</h1>
+<aside class="notice">
+Spot is private endpoint and requires authentication. Please refer to the <a href='/#authentication'>Authentication</a> section for more information.
+</aside>
+<h2 id='test-connectivity-trade-api'>Test connectivity trade API</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'X-JRT-APIKEY: {your-api-key}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+
+</code></pre></div>
+<p>Test connectivity to the Trade API.</p>
+
+<p>GET
+<code>/trade/ping (HMAC SHA256)</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pong!"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='create-order'>Create Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">''</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Create a new order</p>
+
+<p>POST <code>/trade/order (HMAC SHA256)</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>side</td>
+<td>Enum</td>
+<td>true</td>
+<td><a href="#side-side">Order side</a></td>
+</tr>
+<tr>
+<td>type</td>
+<td>Enum</td>
+<td>true</td>
+<td><a href="#order-type-order_type">Order type</a></td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>Long</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"baseCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quoteCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRADING"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"completedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"canceledTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"useDiscount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='cancel-all-open-orders-on-a-symbol'>Cancel all Open Orders on a Symbol</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">''</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Cancels all active orders on a symbol.</p>
+
+<p>POST <code>/trade/cancel (HMAC SHA256)</code></p>
+<h3 id='parameters-3'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='cancel-an-order'>Cancel an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">''</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Cancel order by <code>orderId</code></p>
+
+<p>POST <code>/trade/cancel/{orderId} (HMAC SHA256)</code></p>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='trade-history'>Trade history</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Get trading history for a symbol.</p>
+
+<p>GET <code>/trade/history (HMAC SHA256)</code></p>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>pageNo</td>
+<td>Integer</td>
+<td>false</td>
+<td>default is 0</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>false</td>
+<td>default is 20</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"baseCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"canceledTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"completedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"detail"</span><span class="p">:</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"orderSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"quoteCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRADING"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"useDiscount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pageable"</span><span class="p">:</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"paged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sort"</span><span class="p">:</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"unpaged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sort"</span><span class="p">:</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='order-detail'>Order detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>  curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Get order detail by <code>orderId</code>.</p>
+
+<p>GET <code>/trade/detail/{orderId} (HMAC SHA256)</code></p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54223435"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1657874098080</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='current-open-orders'>Current Open Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Get current open orders for a symbol.</p>
+
+<p>GET <code>/trade/current (HMAC SHA256)</code></p>
+<h3 id='parameters-7'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>pageNo</td>
+<td>Integer</td>
+<td>false</td>
+<td>default is 0</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Integer</td>
+<td>false</td>
+<td>default is 20</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"baseCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"canceledTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"completedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"detail"</span><span class="p">:</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"orderSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"quoteCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRADING"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"useDiscount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pageable"</span><span class="p">:</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"paged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sort"</span><span class="p">:</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"unpaged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sort"</span><span class="p">:</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='accounts-wallet-apis'>Accounts/Wallet APIs</h1><h2 id='user-asset'>User Asset</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/account?timestamp=1658030864658&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/account?timestamp=1658030864658&amp;signature={signature}"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Get all user assets.</p>
+
+<p>GET <code>/account (HMAC SHA256)</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"spot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADA"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"frozenBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lockedBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AXS"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"frozenBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lockedBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BPLUS"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"frozenBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lockedBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='account-info'>Account Info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'X-JRT-APIKEY'</span><span class="p">:</span> <span class="s">'your-api-key'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Get account information base on API Key.</p>
+
+<p>GET <code>/account/apiKey (HMAC SHA256)</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>recvWindow</td>
+<td>Long</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Long</td>
+<td>true</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>true</td>
+<td>HMAC SHA256 signature</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxxxx-9590-4f6c-b274-xxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"SPOT_TRADE"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"bindIp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expireTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-15T02:12:01"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-15T02:12:01"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='enum-definitions'>Enum definitions</h1><h2 id='side-side'>Side (side)</h2>
+<ul>
+<li>BUY</li>
+<li>SELL</li>
+</ul>
+<h2 id='order-type-order_type'>Order type (order_type)</h2>
+<ul>
+<li>MARKET</li>
+<li>LIMIT</li>
+</ul>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
