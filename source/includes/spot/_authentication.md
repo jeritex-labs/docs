@@ -35,7 +35,7 @@ A smaller `recvWindow` is more secure, but your request may fail if the transmis
 Please make sure that your timestamp is in sync with our server time. You can use the [Server Time endpoint](/#check-server-time).
 
 <aside class="warning">
- Please make sure that the timestamp parameter adheres to the following rule: serverTime - recvWindow <= timestamp < serverTime + 1000; serverTime stands for Jeritex server time, which can be queried via the <a href='/#check-server-time'>Server Time endpoint.</a>
+ Please make sure that the timestamp parameter adheres to the following rule: serverTime - recvWindow <= timestamp < serverTime + 1000; serverTime stands for Jeritex server time, which can be queried via the <a href='#check-server-time'>Server Time endpoint.</a>
 </aside>
 
 ## Create A Request

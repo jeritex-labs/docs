@@ -1,7 +1,7 @@
 # Spot Trade
 
 <aside class="notice">
-Spot is private endpoint and requires authentication. Please refer to the <a href='/#authentication'>Authentication</a> section for more information.
+Spot is private endpoint and requires authentication. Please refer to the <a href='#authentication'>Authentication</a> section for more information.
 </aside>
 
 ## Test connectivity trade API
