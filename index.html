@@ -287,9 +287,9 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-4a59a6a0.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-43841b06.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-608cc2bb.js"></script>
+      <script src="javascripts/all-1a331a98.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -500,7 +500,7 @@ API-keys and secret-keys are case sensitive.
 <p>Please make sure that your timestamp is in sync with our server time. You can use the <a href="/#check-server-time">Server Time endpoint</a>.</p>
 
 <aside class="warning">
- Please make sure that the timestamp parameter adheres to the following rule: serverTime - recvWindow <= timestamp < serverTime + 1000; serverTime stands for Jeritex server time, which can be queried via the <a href='/#check-server-time'>Server Time endpoint.</a>
+ Please make sure that the timestamp parameter adheres to the following rule: serverTime - recvWindow <= timestamp < serverTime + 1000; serverTime stands for Jeritex server time, which can be queried via the <a href='#check-server-time'>Server Time endpoint.</a>
 </aside>
 <h2 id='create-a-request'>Create A Request</h2>
 <ol>
@@ -922,7 +922,7 @@ Just example keys, please use your own keys.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='spot-trade'>Spot Trade</h1>
 <aside class="notice">
-Spot is private endpoint and requires authentication. Please refer to the <a href='/#authentication'>Authentication</a> section for more information.
+Spot is private endpoint and requires authentication. Please refer to the <a href='#authentication'>Authentication</a> section for more information.
 </aside>
 <h2 id='test-connectivity-trade-api'>Test connectivity trade API</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-JRT-APIKEY: {your-api-key}'</span>
