@@ -363,6 +363,9 @@
                     <a href="#check-server-time" class="toc-h2 toc-link" data-title="Check Server Time">Check Server Time</a>
                   </li>
                   <li>
+                    <a href="#market-summary" class="toc-h2 toc-link" data-title="Market Summary">Market Summary</a>
+                  </li>
+                  <li>
                     <a href="#all-market-tickers" class="toc-h2 toc-link" data-title="All Market Tickers">All Market Tickers</a>
                   </li>
                   <li>
@@ -436,7 +439,7 @@
 <!-- TODO: fix link -->
 
 <ul>
-<li>Some endpoints will require an API Key. Please refer to <a href="https://jeritexeu.com/api-key">this page</a> regarding API key creation.</li>
+<li>Some endpoints will require an API Key. Please refer to <a href="https://jrit.io/api-key">this page</a> regarding API key creation.</li>
 <li>Once API key is created, it is recommended to set IP restrictions on the key for security reasons.</li>
 <li>Never share your API key/secret key to ANYONE.</li>
 </ul>
@@ -453,7 +456,7 @@
 <p>A <code>SPOT</code> account is provided by default upon creation of a Jeritex Account.</p>
 <h2 id='general-api-information'>General API Information</h2>
 <ul>
-<li>The base endpoint is: <strong><a href="https://api-v2.jeritexeu.com/api/v1/">https://api-v2.jeritexeu.com/api/v1/</a></strong></li>
+<li>The base endpoint is: <strong><a href="https://api-v2.jrit.io/api/v1/">https://api-v2.jrit.io/api/v1/</a></strong></li>
 <li>All endpoints return either a JSON object or array.</li>
 <li>All time and timestamp related fields are in milliseconds.</li>
 </ul>
@@ -469,7 +472,7 @@
 <h1 id='authentication'>Authentication</h1>
 <aside class="notice">
 <!-- TODO: fix link -->
-Please visit <a href='https://jeritexeu.com/api-key'>this page</a> to generate an API key
+Please visit <a href='https://jrit.io/api-key'>this page</a> to generate an API key
 </aside>
 
 <aside class="notice">
@@ -533,7 +536,7 @@ Just example keys, please use your own keys.
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># HMAC SHA256 signature:</span>
 <span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"symbol=BTC/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000"</span> |  openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="s2">"OQqHHLH52AR6iHsoYLffDsO8H9qEa92cBVdq6T5Ir0a1oLNekaWdwwmuOwLmmksA"</span>
 <span class="o">(</span>stdin<span class="o">)=</span> 30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>  curl <span class="nt">-H</span> <span class="s2">"X-JRT-APIKEY"</span>: g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP<span class="s2">" -X GET 'https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=BTC%2FUSDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000&amp;signature=30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184'
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>  curl <span class="nt">-H</span> <span class="s2">"X-JRT-APIKEY"</span>: g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP<span class="s2">" -X GET 'https://api-v2.jrit.io/api/v1/trade/history?symbol=BTC%2FUSDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000&amp;signature=30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184'
 </span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">hmac</span>
 <span class="kn">import</span> <span class="nn">hashlib</span>
@@ -543,7 +546,7 @@ Just example keys, please use your own keys.
 
 <span class="n">api_key</span> <span class="o">=</span> <span class="s">"g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP"</span>
 <span class="n">api_secret</span> <span class="o">=</span> <span class="s">"OQqHHLH52AR6iHsoYLffDsO8H9qEa92cBVdq6T5Ir0a1oLNekaWdwwmuOwLmmksA"</span>
-<span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1"</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1"</span>
 
 
 <span class="k">def</span> <span class="nf">timestamp</span><span class="p">():</span>
@@ -612,10 +615,10 @@ Just example keys, please use your own keys.
 </ul>
 
 <p><code>symbol=BTC/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000</code></p>
-<h1 id='market-data-endpoints'>Market Data Endpoints</h1><h2 id='test-connectivity'>Test Connectivity</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/ping'</span>
+<h1 id='market-data-endpoints'>Market Data Endpoints</h1><h2 id='test-connectivity'>Test Connectivity</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jrit.io/api/v1/public/ping'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/ping"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/public/ping"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -637,10 +640,10 @@ Just example keys, please use your own keys.
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='check-server-time'>Check Server Time</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/time'</span>
+</span></code></pre></div><h2 id='check-server-time'>Check Server Time</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jrit.io/api/v1/public/time'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/time"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/public/time"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -660,14 +663,54 @@ Just example keys, please use your own keys.
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"serverTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1657727196288</span><span class="w">
+    </span><span class="nl">"server-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1657727196288</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='all-market-tickers'>All Market Tickers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/tickers'</span>
+</span></code></pre></div><h2 id='market-summary'>Market Summary</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jrit.io/api/v1/public/summary'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/tickers"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/public/summary"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<p>Market summary.</p>
+
+<p>GET
+<code>/public/summary</code></p>
+<h3 id='parameters-3'>Parameters</h3>
+<p>No parameters</p>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="err">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"trading_pairs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ticker_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">17187.92000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lowest_ask"</span><span class="p">:</span><span class="w"> </span><span class="mf">30000.00000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"highest_bid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">354.9114</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quote_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">6103615.7950</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_change_percent_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.0027</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"highest_price_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">17243.36000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lowest_price_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">17185.04000000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="err">,</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></code></pre></div><h2 id='all-market-tickers'>All Market Tickers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jrit.io/api/v1/public/tickers'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/public/tickers"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -678,7 +721,7 @@ Just example keys, please use your own keys.
 
 <p>GET
 <code>/public/tickers</code></p>
-<h3 id='parameters-3'>Parameters</h3>
+<h3 id='parameters-4'>Parameters</h3>
 <p>No parameters</p>
 
 <blockquote>
@@ -686,43 +729,53 @@ Just example keys, please use your own keys.
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">19467.44</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">20420.99</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">19250.48</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">20030.3</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0293</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mf">562.86</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1722.7730</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">19467.44</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">20030.3</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">324695303.32295424621914948654</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SFT/USDT"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00120001</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00125100</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00119010</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00124000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0337</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00003999</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">31185153.1086</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00120125</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00124000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">410167.082020309946</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"DOGE_USDT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"ticker_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOGE/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOGE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.074750</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">8830133.0000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quote_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">663044.4657</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.074760</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.074740</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07524000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07563000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07473000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.074750</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.0066</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.00049000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_day_close"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"usd_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.074750</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_usd_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"SFT_USDT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"ticker_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SFT/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SFT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"target_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quote_volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_day_close"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"usd_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base_usd_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
         </span><span class="err">...</span><span class="w">
-    </span><span class="p">],</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='specific-market-ticker'>Specific Market Ticker</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/ticker?symbol=BTC/USDT'</span>
+</span></code></pre></div><h2 id='specific-market-ticker'>Specific Market Ticker</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jrit.io/api/v1/public/ticker?ticker_id=BTC/USDT'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/ticker?symbol=BTC/USDT"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/public/ticker?ticker_id=BTC/USDT"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -733,58 +786,6 @@ Just example keys, please use your own keys.
 
 <p>GET
 <code>/public/ticker</code></p>
-<h3 id='parameters-4'>Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>symbol</td>
-<td>string</td>
-<td>Yes</td>
-<td>Symbol</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>Response example</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">19467.44</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">20420.99</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">19250.48</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">19966.36</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0260</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mf">498.92</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1722.9729</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">19467.44</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">19966.36</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">324872799.77115424621914948654</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='order-book'>Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/orderbook/L2?symbol=BTC/USDT'</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/orderbook/L2?symbol=BTC/USDT"</span>
-
-<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-</code></pre></div>
-<p>Order book of specific symbol</p>
-
-<p>GET
-<code>/public/orderbook/L2</code></p>
 <h3 id='parameters-5'>Parameters</h3>
 <table><thead>
 <tr>
@@ -795,7 +796,7 @@ Just example keys, please use your own keys.
 </tr>
 </thead><tbody>
 <tr>
-<td>symbol</td>
+<td>ticker_id</td>
 <td>string</td>
 <td>Yes</td>
 <td>Symbol</td>
@@ -808,6 +809,71 @@ Just example keys, please use your own keys.
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ticker_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"target_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">17190.08000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"base_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">323.0380</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quote_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">5555797.7228</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">17233.44000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">17243.36000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">17185.04000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">17190.08000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.0026</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mf">-43.36000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_day_close"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usd_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">17190.08000000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"base_usd_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='order-book'>Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jrit.io/api/v1/public/orderbook?ticker_id=BTC/USDT'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/public/orderbook?ticker_id=BTC/USDT"</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<p>Order book of specific symbol</p>
+
+<p>GET
+<code>/public/orderbook/L2</code></p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticker_id</td>
+<td>string</td>
+<td>Yes</td>
+<td>Symbol</td>
+</tr>
+<tr>
+<td>depth</td>
+<td>int</td>
+<td>No</td>
+<td>0 returns full depth. Depth = 100 means 50 for each bid/ask side.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ticker_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1673237050158</span><span class="p">,</span><span class="w">
     </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19974.29</span><span class="p">,</span><span class="w">
@@ -833,10 +899,10 @@ Just example keys, please use your own keys.
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='kline-candlestick-data'>Kline/Candlestick Data</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritexeu.com/api/v1/public/kline?symbol=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500'</span>
+</span></code></pre></div><h2 id='kline-candlestick-data'>Kline/Candlestick Data</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jrit.io/api/v1/public/kline?ticker_id=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/public/kline?symbol=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/public/kline?ticker_id=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -849,7 +915,7 @@ Just example keys, please use your own keys.
 
 <p>GET
 <code>/public/kline</code></p>
-<h3 id='parameters-6'>Parameters</h3>
+<h3 id='parameters-7'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -859,7 +925,7 @@ Just example keys, please use your own keys.
 </tr>
 </thead><tbody>
 <tr>
-<td>symbol</td>
+<td>ticker_id</td>
 <td>string</td>
 <td>Yes</td>
 <td>Symbol</td>
@@ -924,11 +990,11 @@ Just example keys, please use your own keys.
 <aside class="notice">
 Spot is private endpoint and requires authentication. Please refer to the <a href='#authentication'>Authentication</a> section for more information.
 </aside>
-<h2 id='test-connectivity-trade-api'>Test connectivity trade API</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+<h2 id='test-connectivity-trade-api'>Test connectivity trade API</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api-v2.jrit.io/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-JRT-APIKEY: {your-api-key}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -982,13 +1048,13 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='create-order'>Create Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jrit.io/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">''</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1065,48 +1131,48 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 <p>Response example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"baseCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"quoteCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRADING"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"completedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"canceledTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"useDiscount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"orderSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"traded_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="nl">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quote_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRADING"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"completed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"canceled_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"use_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='cancel-all-open-orders-on-a-symbol'>Cancel all Open Orders on a Symbol</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jrit.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">''</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1166,13 +1232,13 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='cancel-an-order'>Cancel an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
   curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jrit.io/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">''</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1232,12 +1298,12 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='trade-history'>Trade history</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
   curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jrit.io/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1303,55 +1369,50 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"content"</span><span class="p">:</span><span class="w">
-        </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"baseCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"canceledTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"canceled_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"completedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"detail"</span><span class="p">:</span><span class="w">
-                </span><span class="p">[</span><span class="w">
+                </span><span class="nl">"completed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
                 </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"orderSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"quoteCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"quote_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRADING"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"traded_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"useDiscount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="nl">"use_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pageable"</span><span class="p">:</span><span class="w">
-        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"number_of_elements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pageable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"page_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
             </span><span class="nl">"paged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"sort"</span><span class="p">:</span><span class="w">
-            </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -1359,24 +1420,23 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
             </span><span class="nl">"unpaged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sort"</span><span class="p">:</span><span class="w">
-        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="nl">"total_elements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='order-detail'>Order detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>  curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jrit.io/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1433,7 +1493,7 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54223435"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54223435"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
       </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -1444,12 +1504,12 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='current-open-orders'>Current Open Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jrit.io/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1515,55 +1575,50 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"content"</span><span class="p">:</span><span class="w">
-        </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"baseCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"canceledTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"canceled_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"completedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"detail"</span><span class="p">:</span><span class="w">
-                </span><span class="p">[</span><span class="w">
+                </span><span class="nl">"completed_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                         </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">],</span><span class="w">
                 </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"orderSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"order_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"quoteCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"quote_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRADING"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"traded_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"useDiscount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="nl">"use_discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pageable"</span><span class="p">:</span><span class="w">
-        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"number_of_elements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pageable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"page_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"page_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
             </span><span class="nl">"paged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"sort"</span><span class="p">:</span><span class="w">
-            </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -1571,24 +1626,23 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
             </span><span class="nl">"unpaged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sort"</span><span class="p">:</span><span class="w">
-        </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="nl">"total_elements"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='accounts-wallet-apis'>Accounts/Wallet APIs</h1><h2 id='user-asset'>User Asset</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/account?timestamp=1658030864658&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jrit.io/api/v1/account?timestamp=1658030864658&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/account?timestamp=1658030864658&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/account?timestamp=1658030864658&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1641,25 +1695,25 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADA"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"frozenBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"lockedBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"frozen_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"locked_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AXS"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"frozenBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"lockedBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"frozen_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"locked_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BPLUS"</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"frozenBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"lockedBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"frozen_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"locked_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"total_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="err">...</span><span class="w">
@@ -1668,12 +1722,12 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='account-info'>Account Info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritexeu.com/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature'</span> <span class="se">\</span>
+  <span class="s1">'https://api-v2.jrit.io/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritexeu.com/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jrit.io/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1722,14 +1776,14 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxxxx-9590-4f6c-b274-xxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxxxx-9590-4f6c-b274-xxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"SPOT_TRADE"</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"bindIp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"expireTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-15T02:12:01"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"createTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-15T02:12:01"</span><span class="w">
+        </span><span class="nl">"bind_ip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expire_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-15T02:12:01"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"create_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-15T02:12:01"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
