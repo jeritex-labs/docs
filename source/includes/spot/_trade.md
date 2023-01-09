@@ -7,14 +7,14 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 ## Test connectivity trade API
 
 ```shell
-curl --location --request POST 'https://api-v2.jeritexeu.com/api/v1/trade/ping?timestamp=1657874098080&signature={signature}' \
+curl --location --request POST 'https://api-v2.jrit.io/api/v1/trade/ping?timestamp=1657874098080&signature={signature}' \
 --header 'X-JRT-APIKEY: {your-api-key}'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/trade/ping?timestamp=1657874098080&signature={signature}"
+url = "https://api-v2.jrit.io/api/v1/trade/ping?timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -54,7 +54,7 @@ GET
 
 ```shell
 curl -X 'POST' \
-  'https://api-v2.jeritexeu.com/api/v1/trade/order?symbol=JRIT%2FUSDT&side=BUY&type=MARKET&quantity=1000&price=1&timestamp=1657874098080&signature={signature}' \
+  'https://api-v2.jrit.io/api/v1/trade/order?symbol=JRIT%2FUSDT&side=BUY&type=MARKET&quantity=1000&price=1&timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key' \
   -d ''
@@ -63,7 +63,7 @@ curl -X 'POST' \
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/trade/order?symbol=JRIT%2FUSDT&side=BUY&type=MARKET&quantity=1000&price=1&timestamp=1657874098080&signature={signature}"
+url = "https://api-v2.jrit.io/api/v1/trade/order?symbol=JRIT%2FUSDT&side=BUY&type=MARKET&quantity=1000&price=1&timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -96,39 +96,39 @@ POST `/trade/order (HMAC SHA256)`
 
   ```json
   {
-  "code": 0,
-  "message": "string",
-  "data": {
-    "orderId": "string",
-    "memberId": "string",
-    "type": "MARKET",
-    "amount": 0,
-    "symbol": "string",
-    "tradedAmount": 0,
-    "turnover": 0,
-    "baseCurrency": "string",
-    "quoteCurrency": "string",
-    "status": "TRADING",
-    "direction": "BUY",
-    "price": 0,
-    "time": 0,
-    "completedTime": 0,
-    "canceledTime": 0,
-    "useDiscount": true,
-    "orderSource": "",
-    "detail": [
-      {
-        "orderId": "string",
-        "price": 0,
+    "code": 0,
+    "message": "string",
+    "data": {
+        "order_id": "string",
+        "member_id": "string",
+        "type": "MARKET",
         "amount": 0,
+        "symbol": "string",
+        "traded_amount": 0,
         "turnover": 0,
-        "fee": 0,
-        "timestamp": 0
-      }
-    ],
-    "completed": true
-  },
-  "success": true
+        "base_currency": "string",
+        "quote_currency": "string",
+        "status": "TRADING",
+        "direction": "BUY",
+        "price": 0,
+        "time": 0,
+        "completed_time": 0,
+        "canceled_time": 0,
+        "use_discount": true,
+        "order_source": "",
+        "detail": [
+            {
+                "order_id": "string",
+                "price": 0,
+                "amount": 0,
+                "turnover": 0,
+                "fee": 0,
+                "timestamp": 0
+            }
+        ],
+        "completed": true
+    },
+    "success": true
 }
   ```
 
@@ -136,7 +136,7 @@ POST `/trade/order (HMAC SHA256)`
 
 ```shell
 curl -X 'POST' \
-  'https://api-v2.jeritexeu.com/api/v1/trade/cancel?symbol=JRIT%2FUSDT&timestamp=1657874098080&signature={signature}' \
+  'https://api-v2.jrit.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key' \
   -d ''
@@ -145,7 +145,7 @@ curl -X 'POST' \
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/trade/cancel?symbol=JRIT%2FUSDT&timestamp=1657874098080&signature={signature}"
+url = "https://api-v2.jrit.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -186,7 +186,7 @@ POST `/trade/cancel (HMAC SHA256)`
 ```shell
 curl -X 'POST' \
   curl -X 'POST' \
-  'https://api-v2.jeritexeu.com/api/v1/trade/cancel/423523?timestamp=1657874098080&signature={signaure}' \
+  'https://api-v2.jrit.io/api/v1/trade/cancel/423523?timestamp=1657874098080&signature={signaure}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key' \
   -d ''
@@ -195,7 +195,7 @@ curl -X 'POST' \
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/trade/cancel/423523?timestamp=1657874098080&signature={signaure}"
+url = "https://api-v2.jrit.io/api/v1/trade/cancel/423523?timestamp=1657874098080&signature={signaure}"
 
 payload={}
 headers = {
@@ -236,7 +236,7 @@ POST `/trade/cancel/{orderId} (HMAC SHA256)`
 ```shell
 curl -X 'POST' \
   curl -X 'GET' \
-  'https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}' \
+  'https://api-v2.jrit.io/api/v1/trade/history?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -244,7 +244,7 @@ curl -X 'POST' \
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}"
+url = "https://api-v2.jrit.io/api/v1/trade/history?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -276,55 +276,50 @@ GET `/trade/history (HMAC SHA256)`
 ```json
 {
     "code": 200,
-    "data":
-    {
-        "content":
-        [
+    "data": {
+        "content": [
             {
                 "amount": 0,
-                "baseCurrency": "string",
-                "canceledTime": 0,
+                "base_currency": "string",
+                "canceled_time": 0,
                 "completed": true,
-                "completedTime": 0,
-                "detail":
-                [
+                "completed_time": 0,
+                "detail": [
                     {
                         "amount": 0,
                         "fee": 0,
-                        "orderId": "string",
+                        "order_id": "string",
                         "price": 0,
                         "timestamp": 0,
                         "turnover": 0
                     }
                 ],
                 "direction": "BUY",
-                "memberId": "string",
-                "orderId": "string",
-                "orderSource": "string",
+                "member_id": "string",
+                "order_id": "string",
+                "order_source": "string",
                 "price": 0,
-                "quoteCurrency": "string",
+                "quote_currency": "string",
                 "status": "TRADING",
                 "symbol": "string",
                 "time": 0,
-                "tradedAmount": 0,
+                "traded_amount": 0,
                 "turnover": 0,
                 "type": "MARKET",
-                "useDiscount": true
+                "use_discount": true
             }
         ],
         "empty": true,
         "first": true,
         "last": true,
         "number": 0,
-        "numberOfElements": 0,
-        "pageable":
-        {
+        "number_of_elements": 0,
+        "pageable": {
             "offset": 0,
-            "pageNumber": 0,
-            "pageSize": 20,
+            "page_number": 0,
+            "page_size": 20,
             "paged": true,
-            "sort":
-            {
+            "sort": {
                 "empty": false,
                 "sorted": true,
                 "unsorted": false
@@ -332,14 +327,13 @@ GET `/trade/history (HMAC SHA256)`
             "unpaged": false
         },
         "size": 20,
-        "sort":
-        {
+        "sort": {
             "empty": false,
             "sorted": true,
             "unsorted": false
         },
-        "totalElements": 0,
-        "totalPages": 0
+        "total_elements": 0,
+        "total_pages": 0
     },
     "success": true
 }
@@ -349,7 +343,7 @@ GET `/trade/history (HMAC SHA256)`
   
 ```shell
   curl -X 'GET' \
-  'https://api-v2.jeritexeu.com/api/v1/trade/detail/54223435?timestamp=1657874098080&signature={signature}' \
+  'https://api-v2.jrit.io/api/v1/trade/detail/54223435?timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -357,7 +351,7 @@ GET `/trade/history (HMAC SHA256)`
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/trade/detail/54223435?timestamp=1657874098080&signature={signature}"
+url = "https://api-v2.jrit.io/api/v1/trade/detail/54223435?timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -390,7 +384,7 @@ GET `/trade/detail/{orderId} (HMAC SHA256)`
   "message": "success",
   "data": [
     {
-      "orderId": "54223435",
+      "order_id": "54223435",
       "price": 1,
       "amount": 1000,
       "turnover": 0,
@@ -406,7 +400,7 @@ GET `/trade/detail/{orderId} (HMAC SHA256)`
 
 ```shell
 curl -X 'GET' \
-  'https://api-v2.jeritexeu.com/api/v1/trade/current?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}' \
+  'https://api-v2.jrit.io/api/v1/trade/current?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -414,7 +408,7 @@ curl -X 'GET' \
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/trade/current?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}"
+url = "https://api-v2.jrit.io/api/v1/trade/current?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -446,55 +440,50 @@ GET `/trade/current (HMAC SHA256)`
 ```json
 {
     "code": 200,
-    "data":
-    {
-        "content":
-        [
+    "data": {
+        "content": [
             {
                 "amount": 0,
-                "baseCurrency": "string",
-                "canceledTime": 0,
+                "base_currency": "string",
+                "canceled_time": 0,
                 "completed": true,
-                "completedTime": 0,
-                "detail":
-                [
+                "completed_time": 0,
+                "detail": [
                     {
                         "amount": 0,
                         "fee": 0,
-                        "orderId": "string",
+                        "order_id": "string",
                         "price": 0,
                         "timestamp": 0,
                         "turnover": 0
                     }
                 ],
                 "direction": "BUY",
-                "memberId": "string",
-                "orderId": "string",
-                "orderSource": "string",
+                "member_id": "string",
+                "order_id": "string",
+                "order_source": "string",
                 "price": 0,
-                "quoteCurrency": "string",
+                "quote_currency": "string",
                 "status": "TRADING",
                 "symbol": "string",
                 "time": 0,
-                "tradedAmount": 0,
+                "traded_amount": 0,
                 "turnover": 0,
                 "type": "MARKET",
-                "useDiscount": true
+                "use_discount": true
             }
         ],
         "empty": true,
         "first": true,
         "last": true,
         "number": 0,
-        "numberOfElements": 0,
-        "pageable":
-        {
+        "number_of_elements": 0,
+        "pageable": {
             "offset": 0,
-            "pageNumber": 0,
-            "pageSize": 20,
+            "page_number": 0,
+            "page_size": 20,
             "paged": true,
-            "sort":
-            {
+            "sort": {
                 "empty": false,
                 "sorted": true,
                 "unsorted": false
@@ -502,14 +491,13 @@ GET `/trade/current (HMAC SHA256)`
             "unpaged": false
         },
         "size": 20,
-        "sort":
-        {
+        "sort": {
             "empty": false,
             "sorted": true,
             "unsorted": false
         },
-        "totalElements": 0,
-        "totalPages": 0
+        "total_elements": 0,
+        "total_pages": 0
     },
     "success": true
 }

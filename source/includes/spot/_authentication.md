@@ -2,7 +2,7 @@
 
 <aside class="notice">
 <!-- TODO: fix link -->
-Please visit <a href='https://jeritexeu.com/api-key'>this page</a> to generate an API key
+Please visit <a href='https://jrit.io/api-key'>this page</a> to generate an API key
 </aside>
 
 <aside class="notice">
@@ -64,7 +64,7 @@ echo -n "symbol=BTC/USDT&pageNo=0&pageSize=20&timestamp=1657861196487&recvWindow
 ```
   
   ```shell
-  curl -H "X-JRT-APIKEY": g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP" -X GET 'https://api-v2.jeritexeu.com/api/v1/trade/history?symbol=BTC%2FUSDT&pageNo=0&pageSize=20&timestamp=1657861196487&recvWindow=5000&signature=30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184'
+  curl -H "X-JRT-APIKEY": g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP" -X GET 'https://api-v2.jrit.io/api/v1/trade/history?symbol=BTC%2FUSDT&pageNo=0&pageSize=20&timestamp=1657861196487&recvWindow=5000&signature=30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184'
   ```
 
 ```python
@@ -77,7 +77,7 @@ from urllib.parse import urlencode
 
 api_key = "g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP"
 api_secret = "OQqHHLH52AR6iHsoYLffDsO8H9qEa92cBVdq6T5Ir0a1oLNekaWdwwmuOwLmmksA"
-base_url = "https://api-v2.jeritexeu.com/api/v1"
+base_url = "https://api-v2.jrit.io/api/v1"
 
 
 def timestamp():

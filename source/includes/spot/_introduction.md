@@ -4,7 +4,7 @@
 ## API Key Setup
 
 <!-- TODO: fix link -->
-* Some endpoints will require an API Key. Please refer to [this page](https://jeritexeu.com/api-key) regarding API key creation.
+* Some endpoints will require an API Key. Please refer to [this page](https://jrit.io/api-key) regarding API key creation.
 * Once API key is created, it is recommended to set IP restrictions on the key for security reasons.
 * Never share your API key/secret key to ANYONE.
 
@@ -23,7 +23,7 @@ A <code>SPOT</code> account is provided by default upon creation of a Jeritex Ac
 
 ## General API Information
 
-* The base endpoint is: **<https://api-v2.jeritexeu.com/api/v1/>**
+* The base endpoint is: **<https://api-v2.jrit.io/api/v1/>**
 * All endpoints return either a JSON object or array.
 * All time and timestamp related fields are in milliseconds.
 

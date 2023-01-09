@@ -4,7 +4,7 @@
 
 ```shell
 curl -X 'GET' \
-  'https://api-v2.jeritexeu.com/api/v1/account?timestamp=1658030864658&signature={signature}' \
+  'https://api-v2.jrit.io/api/v1/account?timestamp=1658030864658&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -12,7 +12,7 @@ curl -X 'GET' \
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/account?timestamp=1658030864658&signature={signature}"
+url = "https://api-v2.jrit.io/api/v1/account?timestamp=1658030864658&signature={signature}"
 
 payload={}
 headers = {
@@ -46,25 +46,25 @@ GET `/account (HMAC SHA256)`
             {
                 "asset": "ADA",
                 "balance": 0,
-                "frozenBalance": 0,
-                "lockedBalance": 0,
-                "totalBalance": 0,
+                "frozen_balance": 0,
+                "locked_balance": 0,
+                "total_balance": 0,
                 "locked": false
             },
             {
                 "asset": "AXS",
                 "balance": 0,
-                "frozenBalance": 0,
-                "lockedBalance": 0,
-                "totalBalance": 0,
+                "frozen_balance": 0,
+                "locked_balance": 0,
+                "total_balance": 0,
                 "locked": false
             },
             {
                 "asset": "BPLUS",
                 "balance": 0,
-                "frozenBalance": 0,
-                "lockedBalance": 0,
-                "totalBalance": 0,
+                "frozen_balance": 0,
+                "locked_balance": 0,
+                "total_balance": 0,
                 "locked": false
             },
             ...
@@ -78,7 +78,7 @@ GET `/account (HMAC SHA256)`
 
 ```shell
 curl -X 'GET' \
-  'https://api-v2.jeritexeu.com/api/v1/account/apiKey?timestamp=1658030864658&signature=signature' \
+  'https://api-v2.jrit.io/api/v1/account/apiKey?timestamp=1658030864658&signature=signature' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -86,7 +86,7 @@ curl -X 'GET' \
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/account/apiKey?timestamp=1658030864658&signature=signature"
+url = "https://api-v2.jrit.io/api/v1/account/apiKey?timestamp=1658030864658&signature=signature"
 
 payload={}
 headers = {
@@ -116,14 +116,14 @@ GET `/account/apiKey (HMAC SHA256)`
 {
     "code": 200,
     "data": {
-        "memberId": "xxxxxxxxx-9590-4f6c-b274-xxxxxxxxxxxx",
+        "member_id": "xxxxxxxxx-9590-4f6c-b274-xxxxxxxxxxxx",
         "permissions": [
             "READ",
             "SPOT_TRADE"
         ],
-        "bindIp": null,
-        "expireTime": "2022-12-15T02:12:01",
-        "createTime": "2022-07-15T02:12:01"
+        "bind_ip": null,
+        "expire_time": "2022-12-15T02:12:01",
+        "create_time": "2022-07-15T02:12:01"
     },
     "success": true
 }

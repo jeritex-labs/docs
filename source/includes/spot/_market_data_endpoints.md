@@ -3,13 +3,13 @@
 ## Test Connectivity
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritexeu.com/api/v1/public/ping'
+curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/ping'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/public/ping"
+url = "https://api-v2.jrit.io/api/v1/public/ping"
 
 payload={}
 headers = {}
@@ -39,13 +39,13 @@ No parameters
 ## Check Server Time
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritexeu.com/api/v1/public/time'
+curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/time'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/public/time"
+url = "https://api-v2.jrit.io/api/v1/public/time"
 
 payload={}
 headers = {}
@@ -68,22 +68,73 @@ No parameters
 {
   "code": 200,
   "data": {
-    "serverTime": 1657727196288
+    "server-time": 1657727196288
   },
   "success": true
 }
 ```
 
-## All Market Tickers
+## Market Summary
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritexeu.com/api/v1/public/tickers'
+curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/summary'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/public/tickers"
+url = "https://api-v2.jrit.io/api/v1/public/summary"
+
+payload={}
+headers = {}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+```
+
+Market summary.
+
+GET
+<code>/public/summary</code>
+
+### Parameters
+
+No parameters
+
+>Response example
+
+```json
+
+  "code": 200,
+  "data": [
+    {
+      "trading_pairs": "BTC/USDT",
+      "ticker_id": "BTC/USDT",
+      "base": "BTC",
+      "target": "USDT",
+      "last_price": 17187.92000000,
+      "lowest_ask": 30000.00000000,
+      "highest_bid": 0,
+      "base_volume": 354.9114,
+      "quote_volume": 6103615.7950,
+      "price_change_percent_24h": -0.0027,
+      "highest_price_24h": 17243.36000000,
+      "lowest_price_24h": 17185.04000000
+    },
+    ...
+  ],
+  "success": true
+```
+
+## All Market Tickers
+
+```shell
+curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/tickers'
+```
+
+```python
+import requests
+
+url = "https://api-v2.jrit.io/api/v1/public/tickers"
 
 payload={}
 headers = {}
@@ -105,37 +156,47 @@ No parameters
 ```json
 {
     "code": 200,
-    "data": [
-        {
-            "symbol": "BTC/USDT",
-            "open": 19467.44,
-            "high": 20420.99,
-            "low": 19250.48,
-            "close": 20030.3,
-            "chg": 0.0293,
-            "change": 562.86,
-            "volume": 1722.7730,
-            "lastDayClose": 19467.44,
-            "usdRate": 20030.3,
-            "baseUsdRate": 1,
-            "quoteVolume": 324695303.32295424621914948654
-        },
-        {
-            "symbol": "SFT/USDT",
-            "open": 0.00120001,
-            "high": 0.00125100,
-            "low": 0.00119010,
-            "close": 0.00124000,
-            "chg": 0.0337,
-            "change": 0.00003999,
-            "volume": 31185153.1086,
-            "lastDayClose": 0.00120125,
-            "usdRate": 0.00124000,
-            "baseUsdRate": 1,
-            "quoteVolume": 410167.082020309946
-        },
+    "data": {
+      "DOGE_USDT": {
+        "ticker_id": "DOGE/USDT",
+        "base_currency": "DOGE",
+        "target_currency": "USDT",
+        "last_price": 0.074750,
+        "base_volume": 8830133.0000,
+        "quote_volume": 663044.4657,
+        "ask": 0.074760,
+        "bid": 0.074740,
+        "open": 0.07524000,
+        "high": 0.07563000,
+        "low": 0.07473000,
+        "close": 0.074750,
+        "chg": -0.0066,
+        "change": -0.00049000,
+        "last_day_close": 0,
+        "usd_rate": 0.074750,
+        "base_usd_rate": 1
+      },
+      "SFT_USDT": {
+        "ticker_id": "SFT/USDT",
+        "base_currency": "SFT",
+        "target_currency": "USDT",
+        "last_price": 0,
+        "base_volume": 0.0000,
+        "quote_volume": 0,
+        "ask": 0,
+        "bid": 0,
+        "open": 0,
+        "high": 0,
+        "low": 0,
+        "close": 0,
+        "chg": 0.00,
+        "change": 0,
+        "last_day_close": 0,
+        "usd_rate": 0,
+        "base_usd_rate": 1
+      },
         ...
-    ],
+    },
     "success": true
 }
 ```
@@ -143,13 +204,13 @@ No parameters
 ## Specific Market Ticker
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritexeu.com/api/v1/public/ticker?symbol=BTC/USDT'
+curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/ticker?ticker_id=BTC/USDT'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/public/ticker?symbol=BTC/USDT"
+url = "https://api-v2.jrit.io/api/v1/public/ticker?ticker_id=BTC/USDT"
 
 payload={}
 headers = {}
@@ -166,41 +227,46 @@ GET
 
 | Parameter | Type | Required | Description |
 | --------- | ---- | -------- | ----------- |
-| symbol | string | Yes | Symbol |
+| ticker_id | string | Yes | Symbol |
 
 >Response example
 
 ```json
 {
-    "code": 200,
-    "data": {
-        "symbol": "BTC/USDT",
-        "open": 19467.44,
-        "high": 20420.99,
-        "low": 19250.48,
-        "close": 19966.36,
-        "chg": 0.0260,
-        "change": 498.92,
-        "volume": 1722.9729,
-        "lastDayClose": 19467.44,
-        "usdRate": 19966.36,
-        "baseUsdRate": 1,
-        "quoteVolume": 324872799.77115424621914948654
-    },
-    "success": true
+  "code": 200,
+  "data": {
+    "ticker_id": "BTC/USDT",
+    "base_currency": "BTC",
+    "target_currency": "USDT",
+    "last_price": 17190.08000000,
+    "base_volume": 323.0380,
+    "quote_volume": 5555797.7228,
+    "ask": null,
+    "bid": null,
+    "open": 17233.44000000,
+    "high": 17243.36000000,
+    "low": 17185.04000000,
+    "close": 17190.08000000,
+    "chg": -0.0026,
+    "change": -43.36000000,
+    "last_day_close": 0,
+    "usd_rate": 17190.08000000,
+    "base_usd_rate": 1
+  },
+  "success": true
 }
 ```
 
 ## Order Book
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritexeu.com/api/v1/public/orderbook/L2?symbol=BTC/USDT'
+curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/orderbook?ticker_id=BTC/USDT'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/public/orderbook/L2?symbol=BTC/USDT"
+url = "https://api-v2.jrit.io/api/v1/public/orderbook?ticker_id=BTC/USDT"
 
 payload={}
 headers = {}
@@ -217,7 +283,8 @@ GET
 
 | Parameter | Type | Required | Description |
 | --------- | ---- | -------- | ----------- |
-| symbol | string | Yes | Symbol |
+| ticker_id | string | Yes | Symbol |
+| depth     | int    | No  | 0 returns full depth. Depth = 100 means 50 for each bid/ask side.
 
 >Response example
 
@@ -225,6 +292,8 @@ GET
 {
   "code": 200,
   "data": {
+    "ticker_id": "BTC/USDT",
+    "timestamp": 1673237050158,
     "asks": [
       {
         "price": 19974.29,
@@ -255,13 +324,13 @@ GET
 ## Kline/Candlestick Data
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritexeu.com/api/v1/public/kline?symbol=BTC/USDT&interval=1min&from=0&to=0&limit=500'
+curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritexeu.com/api/v1/public/kline?symbol=BTC/USDT&interval=1min&from=0&to=0&limit=500"
+url = "https://api-v2.jrit.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500"
 
 payload={}
 headers = {}
@@ -280,7 +349,7 @@ GET
 
 | Parameter | Type | Required | Description |
 | --------- | ---- | -------- | ----------- |
-| symbol | string | Yes | Symbol |
+| ticker_id | string | Yes | Symbol |
 | interval | string | Yes | Interval of Kline data. Valid values: 1min, 5min, 15min, 30min, 1hour, 4hour, 1day, 1mon, 1week, 1year |
 | from | $int64 | No | start time|
 | to | $int64 | No | end time|
