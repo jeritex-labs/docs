@@ -3,13 +3,13 @@
 ## Test Connectivity
 
 ```shell
-curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/ping'
+curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/ping'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jrit.io/api/v1/public/ping"
+url = "https://api-v2.jeritex.io/api/v1/public/ping"
 
 payload={}
 headers = {}
@@ -26,26 +26,26 @@ GET
 
 No parameters
 
->Response example
+> Response example
 
 ```json
 {
-    "code": 200,
-    "data": "success",
-    "success": true
+  "code": 200,
+  "data": "success",
+  "success": true
 }
 ```
 
 ## Check Server Time
 
 ```shell
-curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/time'
+curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/time'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jrit.io/api/v1/public/time"
+url = "https://api-v2.jeritex.io/api/v1/public/time"
 
 payload={}
 headers = {}
@@ -62,7 +62,7 @@ GET
 
 No parameters
 
->Response example
+> Response example
 
 ```json
 {
@@ -77,13 +77,13 @@ No parameters
 ## Market Summary
 
 ```shell
-curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/summary'
+curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/summary'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jrit.io/api/v1/public/summary"
+url = "https://api-v2.jeritex.io/api/v1/public/summary"
 
 payload={}
 headers = {}
@@ -100,7 +100,7 @@ GET
 
 No parameters
 
->Response example
+> Response example
 
 ```json
 
@@ -128,13 +128,13 @@ No parameters
 ## All Market Tickers
 
 ```shell
-curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/tickers'
+curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/tickers'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jrit.io/api/v1/public/tickers"
+url = "https://api-v2.jeritex.io/api/v1/public/tickers"
 
 payload={}
 headers = {}
@@ -151,7 +151,7 @@ GET
 
 No parameters
 
->Response example
+> Response example
 
 ```json
 {
@@ -204,13 +204,13 @@ No parameters
 ## Specific Market Ticker
 
 ```shell
-curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/ticker?ticker_id=BTC/USDT'
+curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jrit.io/api/v1/public/ticker?ticker_id=BTC/USDT"
+url = "https://api-v2.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT"
 
 payload={}
 headers = {}
@@ -225,11 +225,11 @@ GET
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| ticker_id | string | Yes | Symbol |
+| Parameter | Type   | Required | Description |
+| --------- | ------ | -------- | ----------- |
+| ticker_id | string | Yes      | Symbol      |
 
->Response example
+> Response example
 
 ```json
 {
@@ -238,19 +238,19 @@ GET
     "ticker_id": "BTC/USDT",
     "base_currency": "BTC",
     "target_currency": "USDT",
-    "last_price": 17190.08000000,
-    "base_volume": 323.0380,
+    "last_price": 17190.08,
+    "base_volume": 323.038,
     "quote_volume": 5555797.7228,
     "ask": null,
     "bid": null,
-    "open": 17233.44000000,
-    "high": 17243.36000000,
-    "low": 17185.04000000,
-    "close": 17190.08000000,
+    "open": 17233.44,
+    "high": 17243.36,
+    "low": 17185.04,
+    "close": 17190.08,
     "chg": -0.0026,
-    "change": -43.36000000,
+    "change": -43.36,
     "last_day_close": 0,
-    "usd_rate": 17190.08000000,
+    "usd_rate": 17190.08,
     "base_usd_rate": 1
   },
   "success": true
@@ -260,13 +260,13 @@ GET
 ## Order Book
 
 ```shell
-curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/orderbook?ticker_id=BTC/USDT'
+curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jrit.io/api/v1/public/orderbook?ticker_id=BTC/USDT"
+url = "https://api-v2.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT"
 
 payload={}
 headers = {}
@@ -281,12 +281,12 @@ GET
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| ticker_id | string | Yes | Symbol |
-| depth     | int    | No  | 0 returns full depth. Depth = 100 means 50 for each bid/ask side.
+| Parameter | Type   | Required | Description                                                       |
+| --------- | ------ | -------- | ----------------------------------------------------------------- |
+| ticker_id | string | Yes      | Symbol                                                            |
+| depth     | int    | No       | 0 returns full depth. Depth = 100 means 50 for each bid/ask side. |
 
->Response example
+> Response example
 
 ```json
 {
@@ -324,13 +324,13 @@ GET
 ## Kline/Candlestick Data
 
 ```shell
-curl -X 'GET' 'https://api-v2.jrit.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500'
+curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jrit.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500"
+url = "https://api-v2.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500"
 
 payload={}
 headers = {}
@@ -347,19 +347,19 @@ GET
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| ticker_id | string | Yes | Symbol |
-| interval | string | Yes | Interval of Kline data. Valid values: 1min, 5min, 15min, 30min, 1hour, 4hour, 1day, 1mon, 1week, 1year |
-| from | $int64 | No | start time|
-| to | $int64 | No | end time|
-| limit | integer | No | Limit the number of returned Klines. Default is 500. |
+| Parameter | Type    | Required | Description                                                                                            |
+| --------- | ------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| ticker_id | string  | Yes      | Symbol                                                                                                 |
+| interval  | string  | Yes      | Interval of Kline data. Valid values: 1min, 5min, 15min, 30min, 1hour, 4hour, 1day, 1mon, 1week, 1year |
+| from      | $int64  | No       | start time                                                                                             |
+| to        | $int64  | No       | end time                                                                                               |
+| limit     | integer | No       | Limit the number of returned Klines. Default is 500.                                                   |
 
 <aside class="notice">
     If <code>from</code> and <code>to</code> are not sent, the most recent klines are returned.
 </aside>
 
->Response example
+> Response example
 
 ```json
 {
