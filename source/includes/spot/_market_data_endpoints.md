@@ -386,3 +386,102 @@ GET
   "success": true
 }
 ```
+
+## Historical trades
+
+```shell
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&type=BUY&limit=100'
+```
+
+```python
+import requests
+
+url = "https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&type=BUY&limit=100"
+
+payload={}
+headers = {}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+```
+
+Historical trades of a symbol.
+
+GET
+<code>/public/historical_trades</code>
+
+### Parameters
+
+| Parameter | Type    | Required | Description                                                                                            |
+| --------- | ------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| ticker_id | string  | Yes      | Symbol                                                                                                 |
+| type      | Enum    | Yes      | [Order side](#side-side)
+| limit     | integer | No       | Limit the number of returned trades. Default is 10.                                                   |
+
+> Response example
+
+```json
+{
+  "code": 200,
+  "success": true,
+  "data": [
+   {  
+      "trade_id": "63fdbc61b650f34ef7484465",
+      "price":"0.01",
+      "base_volume":"569000",
+      "quote_volume":"0.01000000",
+      "timestamp":"1677573217550",
+      "type":"sell"
+   }
+   ...
+  ]
+}
+
+```
+
+## Assets
+
+```shell
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/assets'
+```
+
+```python
+import requests
+
+url = "https://api.jeritex.io/api/v1/public/assets"
+
+payload={}
+headers = {}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+```
+
+Available crypto currencies on Jeritex exchange
+
+GET
+<code>/public/assets</code>
+
+### Parameters
+
+No parameters
+
+> Response example
+
+```json
+{
+  "code": 200,
+  "success": true,
+  "data": {
+    "ENJ": {
+      "unit": "ENJ",
+      "name": "Enjin Coin",
+      "can_withdraw": false,
+      "can_deposit": false,
+      "min_withdraw": 0.01000000,
+      "max_withdraw": 50.00000000,
+      "maker_fee": 0.001,
+      "taker_fee": 0.001
+    }
+    ...
+  }
+}
+```
