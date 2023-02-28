@@ -456,7 +456,7 @@
 <p>A <code>SPOT</code> account is provided by default upon creation of a Jeritex Account.</p>
 <h2 id='general-api-information'>General API Information</h2>
 <ul>
-<li>The base endpoint is: <strong><a href="https://api-v2.jeritex.io/api/v1/">https://api-v2.jeritex.io/api/v1/</a></strong></li>
+<li>The base endpoint is: <strong><a href="https://api.jeritex.io/api/v1/">https://api.jeritex.io/api/v1/</a></strong></li>
 <li>All endpoints return either a JSON object or array.</li>
 <li>All time and timestamp related fields are in milliseconds.</li>
 </ul>
@@ -536,7 +536,7 @@ Just example keys, please use your own keys.
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># HMAC SHA256 signature:</span>
 <span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"symbol=BTC/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000"</span> |  openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="s2">"OQqHHLH52AR6iHsoYLffDsO8H9qEa92cBVdq6T5Ir0a1oLNekaWdwwmuOwLmmksA"</span>
 <span class="o">(</span>stdin<span class="o">)=</span> 30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"X-JRT-APIKEY"</span>: g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP<span class="s2">" -X GET 'https://api-v2.jeritex.io/api/v1/trade/history?symbol=BTC%2FUSDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000&amp;signature=30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184'
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-H</span> <span class="s2">"X-JRT-APIKEY"</span>: g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP<span class="s2">" -X GET 'https://api.jeritex.io/api/v1/trade/history?symbol=BTC%2FUSDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000&amp;signature=30a85b7cbf4e9404d4faaa05e6e97bb926d4f7090cf58d542a634a9a5c7ec184'
 </span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">hmac</span>
 <span class="kn">import</span> <span class="nn">hashlib</span>
@@ -546,7 +546,7 @@ Just example keys, please use your own keys.
 
 <span class="n">api_key</span> <span class="o">=</span> <span class="s">"g4AA0EA40t5qwU8OLrIpN9qbPx1PgbwP"</span>
 <span class="n">api_secret</span> <span class="o">=</span> <span class="s">"OQqHHLH52AR6iHsoYLffDsO8H9qEa92cBVdq6T5Ir0a1oLNekaWdwwmuOwLmmksA"</span>
-<span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1"</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1"</span>
 
 
 <span class="k">def</span> <span class="nf">timestamp</span><span class="p">():</span>
@@ -615,10 +615,10 @@ Just example keys, please use your own keys.
 </ul>
 
 <p><code>symbol=BTC/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657861196487&amp;recvWindow=5000</code></p>
-<h1 id='market-data-endpoints'>Market Data Endpoints</h1><h2 id='test-connectivity'>Test Connectivity</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritex.io/api/v1/public/ping'</span>
+<h1 id='market-data-endpoints'>Market Data Endpoints</h1><h2 id='test-connectivity'>Test Connectivity</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/ping'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/public/ping"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/ping"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -640,10 +640,10 @@ Just example keys, please use your own keys.
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='check-server-time'>Check Server Time</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritex.io/api/v1/public/time'</span>
+</span></code></pre></div><h2 id='check-server-time'>Check Server Time</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/time'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/public/time"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/time"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -667,10 +667,10 @@ Just example keys, please use your own keys.
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='market-summary'>Market Summary</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritex.io/api/v1/public/summary'</span>
+</span></code></pre></div><h2 id='market-summary'>Market Summary</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/summary'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/public/summary"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/summary"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -707,10 +707,10 @@ Just example keys, please use your own keys.
     </span><span class="err">...</span><span class="w">
   </span><span class="p">]</span><span class="err">,</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></code></pre></div><h2 id='all-market-tickers'>All Market Tickers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritex.io/api/v1/public/tickers'</span>
+</span></code></pre></div><h2 id='all-market-tickers'>All Market Tickers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/tickers'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/public/tickers"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/tickers"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -772,10 +772,10 @@ Just example keys, please use your own keys.
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='specific-market-ticker'>Specific Market Ticker</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT'</span>
+</span></code></pre></div><h2 id='specific-market-ticker'>Specific Market Ticker</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -829,10 +829,10 @@ Just example keys, please use your own keys.
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='order-book'>Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT'</span>
+</span></code></pre></div><h2 id='order-book'>Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -899,10 +899,10 @@ Just example keys, please use your own keys.
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='kline-candlestick-data'>Kline/Candlestick Data</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api-v2.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500'</span>
+</span></code></pre></div><h2 id='kline-candlestick-data'>Kline/Candlestick Data</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&amp;interval=1min&amp;from=0&amp;to=0&amp;limit=500"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -990,11 +990,11 @@ Just example keys, please use your own keys.
 <aside class="notice">
 Spot is private endpoint and requires authentication. Please refer to the <a href='#authentication'>Authentication</a> section for more information.
 </aside>
-<h2 id='test-connectivity-trade-api'>Test connectivity trade API</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api-v2.jeritex.io/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+<h2 id='test-connectivity-trade-api'>Test connectivity trade API</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.jeritex.io/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'X-JRT-APIKEY: {your-api-key}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/trade/ping?timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1048,13 +1048,13 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='create-order'>Create Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritex.io/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api.jeritex.io/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">''</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/trade/order?symbol=JRIT%2FUSDT&amp;side=BUY&amp;type=MARKET&amp;quantity=1000&amp;price=1&amp;timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1166,13 +1166,13 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='cancel-all-open-orders-on-a-symbol'>Cancel all Open Orders on a Symbol</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritex.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api.jeritex.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">''</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&amp;timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1232,13 +1232,13 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='cancel-an-order'>Cancel an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
   curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritex.io/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}'</span> <span class="se">\</span>
+  <span class="s1">'https://api.jeritex.io/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span> <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">''</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/trade/cancel/423523?timestamp=1657874098080&amp;signature={signaure}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1298,12 +1298,12 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='trade-history'>Trade history</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
   curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritex.io/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api.jeritex.io/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/trade/history?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1431,12 +1431,12 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='order-detail'>Order detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>  curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritex.io/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api.jeritex.io/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/trade/detail/54223435?timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1504,12 +1504,12 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='current-open-orders'>Current Open Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritex.io/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api.jeritex.io/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/trade/current?symbol=JRIT/USDT&amp;pageNo=0&amp;pageSize=20&amp;timestamp=1657874098080&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1637,12 +1637,12 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='accounts-wallet-apis'>Accounts/Wallet APIs</h1><h2 id='user-asset'>User Asset</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritex.io/api/v1/account?timestamp=1658030864658&amp;signature={signature}'</span> <span class="se">\</span>
+  <span class="s1">'https://api.jeritex.io/api/v1/account?timestamp=1658030864658&amp;signature={signature}'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/account?timestamp=1658030864658&amp;signature={signature}"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/account?timestamp=1658030864658&amp;signature={signature}"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -1722,12 +1722,12 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
     </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h2 id='account-info'>Account Info</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-v2.jeritex.io/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature'</span> <span class="se">\</span>
+  <span class="s1">'https://api.jeritex.io/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'X-JRT-APIKEY: your-api-key'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api-v2.jeritex.io/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/account/apiKey?timestamp=1658030864658&amp;signature=signature"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
