@@ -7,14 +7,14 @@ Spot is private endpoint and requires authentication. Please refer to the <a hre
 ## Test connectivity trade API
 
 ```shell
-curl --location --request POST 'https://api-v2.jeritex.io/api/v1/trade/ping?timestamp=1657874098080&signature={signature}' \
+curl --location --request POST 'https://api.jeritex.io/api/v1/trade/ping?timestamp=1657874098080&signature={signature}' \
 --header 'X-JRT-APIKEY: {your-api-key}'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/trade/ping?timestamp=1657874098080&signature={signature}"
+url = "https://api.jeritex.io/api/v1/trade/ping?timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -54,7 +54,7 @@ GET
 
 ```shell
 curl -X 'POST' \
-  'https://api-v2.jeritex.io/api/v1/trade/order?symbol=JRIT%2FUSDT&side=BUY&type=MARKET&quantity=1000&price=1&timestamp=1657874098080&signature={signature}' \
+  'https://api.jeritex.io/api/v1/trade/order?symbol=JRIT%2FUSDT&side=BUY&type=MARKET&quantity=1000&price=1&timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key' \
   -d ''
@@ -63,7 +63,7 @@ curl -X 'POST' \
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/trade/order?symbol=JRIT%2FUSDT&side=BUY&type=MARKET&quantity=1000&price=1&timestamp=1657874098080&signature={signature}"
+url = "https://api.jeritex.io/api/v1/trade/order?symbol=JRIT%2FUSDT&side=BUY&type=MARKET&quantity=1000&price=1&timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -136,7 +136,7 @@ POST `/trade/order (HMAC SHA256)`
 
 ```shell
 curl -X 'POST' \
-  'https://api-v2.jeritex.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&timestamp=1657874098080&signature={signature}' \
+  'https://api.jeritex.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key' \
   -d ''
@@ -145,7 +145,7 @@ curl -X 'POST' \
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&timestamp=1657874098080&signature={signature}"
+url = "https://api.jeritex.io/api/v1/trade/cancel?symbol=JRIT%2FUSDT&timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -186,7 +186,7 @@ POST `/trade/cancel (HMAC SHA256)`
 ```shell
 curl -X 'POST' \
   curl -X 'POST' \
-  'https://api-v2.jeritex.io/api/v1/trade/cancel/423523?timestamp=1657874098080&signature={signaure}' \
+  'https://api.jeritex.io/api/v1/trade/cancel/423523?timestamp=1657874098080&signature={signaure}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key' \
   -d ''
@@ -195,7 +195,7 @@ curl -X 'POST' \
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/trade/cancel/423523?timestamp=1657874098080&signature={signaure}"
+url = "https://api.jeritex.io/api/v1/trade/cancel/423523?timestamp=1657874098080&signature={signaure}"
 
 payload={}
 headers = {
@@ -236,7 +236,7 @@ POST `/trade/cancel/{orderId} (HMAC SHA256)`
 ```shell
 curl -X 'POST' \
   curl -X 'GET' \
-  'https://api-v2.jeritex.io/api/v1/trade/history?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}' \
+  'https://api.jeritex.io/api/v1/trade/history?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -244,7 +244,7 @@ curl -X 'POST' \
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/trade/history?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}"
+url = "https://api.jeritex.io/api/v1/trade/history?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -343,7 +343,7 @@ GET `/trade/history (HMAC SHA256)`
 
 ```shell
   curl -X 'GET' \
-  'https://api-v2.jeritex.io/api/v1/trade/detail/54223435?timestamp=1657874098080&signature={signature}' \
+  'https://api.jeritex.io/api/v1/trade/detail/54223435?timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -351,7 +351,7 @@ GET `/trade/history (HMAC SHA256)`
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/trade/detail/54223435?timestamp=1657874098080&signature={signature}"
+url = "https://api.jeritex.io/api/v1/trade/detail/54223435?timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {
@@ -400,7 +400,7 @@ GET `/trade/detail/{orderId} (HMAC SHA256)`
 
 ```shell
 curl -X 'GET' \
-  'https://api-v2.jeritex.io/api/v1/trade/current?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}' \
+  'https://api.jeritex.io/api/v1/trade/current?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -408,7 +408,7 @@ curl -X 'GET' \
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/trade/current?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}"
+url = "https://api.jeritex.io/api/v1/trade/current?symbol=JRIT/USDT&pageNo=0&pageSize=20&timestamp=1657874098080&signature={signature}"
 
 payload={}
 headers = {

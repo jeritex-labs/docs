@@ -3,13 +3,13 @@
 ## Test Connectivity
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/ping'
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/ping'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/public/ping"
+url = "https://api.jeritex.io/api/v1/public/ping"
 
 payload={}
 headers = {}
@@ -39,13 +39,13 @@ No parameters
 ## Check Server Time
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/time'
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/time'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/public/time"
+url = "https://api.jeritex.io/api/v1/public/time"
 
 payload={}
 headers = {}
@@ -77,13 +77,13 @@ No parameters
 ## Market Summary
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/summary'
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/summary'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/public/summary"
+url = "https://api.jeritex.io/api/v1/public/summary"
 
 payload={}
 headers = {}
@@ -128,13 +128,13 @@ No parameters
 ## All Market Tickers
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/tickers'
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/tickers'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/public/tickers"
+url = "https://api.jeritex.io/api/v1/public/tickers"
 
 payload={}
 headers = {}
@@ -204,13 +204,13 @@ No parameters
 ## Specific Market Ticker
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT'
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT"
+url = "https://api.jeritex.io/api/v1/public/ticker?ticker_id=BTC/USDT"
 
 payload={}
 headers = {}
@@ -260,13 +260,13 @@ GET
 ## Order Book
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT'
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT"
+url = "https://api.jeritex.io/api/v1/public/orderbook?ticker_id=BTC/USDT"
 
 payload={}
 headers = {}
@@ -324,13 +324,13 @@ GET
 ## Kline/Candlestick Data
 
 ```shell
-curl -X 'GET' 'https://api-v2.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500'
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500'
 ```
 
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500"
+url = "https://api.jeritex.io/api/v1/public/kline?ticker_id=BTC/USDT&interval=1min&from=0&to=0&limit=500"
 
 payload={}
 headers = {}

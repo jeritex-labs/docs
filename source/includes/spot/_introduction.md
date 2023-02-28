@@ -23,7 +23,7 @@ A <code>SPOT</code> account is provided by default upon creation of a Jeritex Ac
 
 ## General API Information
 
-- The base endpoint is: **<https://api-v2.jeritex.io/api/v1/>**
+- The base endpoint is: **<https://api.jeritex.io/api/v1/>**
 - All endpoints return either a JSON object or array.
 - All time and timestamp related fields are in milliseconds.
 

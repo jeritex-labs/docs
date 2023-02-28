@@ -4,7 +4,7 @@
 
 ```shell
 curl -X 'GET' \
-  'https://api-v2.jeritex.io/api/v1/account?timestamp=1658030864658&signature={signature}' \
+  'https://api.jeritex.io/api/v1/account?timestamp=1658030864658&signature={signature}' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -12,7 +12,7 @@ curl -X 'GET' \
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/account?timestamp=1658030864658&signature={signature}"
+url = "https://api.jeritex.io/api/v1/account?timestamp=1658030864658&signature={signature}"
 
 payload={}
 headers = {
@@ -78,7 +78,7 @@ GET `/account (HMAC SHA256)`
 
 ```shell
 curl -X 'GET' \
-  'https://api-v2.jeritex.io/api/v1/account/apiKey?timestamp=1658030864658&signature=signature' \
+  'https://api.jeritex.io/api/v1/account/apiKey?timestamp=1658030864658&signature=signature' \
   -H 'accept: application/json' \
   -H 'X-JRT-APIKEY: your-api-key'
 ```
@@ -86,7 +86,7 @@ curl -X 'GET' \
 ```python
 import requests
 
-url = "https://api-v2.jeritex.io/api/v1/account/apiKey?timestamp=1658030864658&signature=signature"
+url = "https://api.jeritex.io/api/v1/account/apiKey?timestamp=1658030864658&signature=signature"
 
 payload={}
 headers = {
