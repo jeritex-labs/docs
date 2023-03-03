@@ -277,7 +277,7 @@ response = requests.request("GET", url, headers=headers, data=payload)
 Order book of specific symbol
 
 GET
-<code>/public/orderbook/L2</code>
+<code>/public/orderbook</code>
 
 ### Parameters
 
