@@ -390,13 +390,13 @@ GET
 ## Historical trades
 
 ```shell
-curl -X 'GET' 'https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&type=BUY&limit=100'
+curl -X 'GET' 'https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&limit=100'
 ```
 
 ```python
 import requests
 
-url = "https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&type=BUY&limit=100"
+url = "https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&limit=100"
 
 payload={}
 headers = {}
@@ -414,7 +414,7 @@ GET
 | Parameter | Type    | Required | Description                                                                                            |
 | --------- | ------- | -------- | ------------------------------------------------------------------------------------------------------ |
 | ticker_id | string  | Yes      | Symbol                                                                                                 |
-| type      | Enum    | Yes      | [Order side](#side-side)
+| type      | Enum    | No      | [Order side](#side-side)
 | limit     | integer | No       | Limit the number of returned trades. Default is 10.                                                   |
 
 > Response example
