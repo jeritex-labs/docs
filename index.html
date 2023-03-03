@@ -992,10 +992,10 @@ Just example keys, please use your own keys.
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='historical-trades'>Historical trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&amp;type=BUY&amp;limit=100'</span>
+</span></code></pre></div><h2 id='historical-trades'>Historical trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="s1">'https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&amp;limit=100'</span>
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&amp;type=BUY&amp;limit=100"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.jeritex.io/api/v1/public/historical_trades?ticker_id=BTC/USDT&amp;limit=100"</span>
 
 <span class="n">payload</span><span class="o">=</span><span class="p">{}</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1024,7 +1024,7 @@ Just example keys, please use your own keys.
 <tr>
 <td>type</td>
 <td>Enum</td>
-<td>Yes</td>
+<td>No</td>
 <td><a href="#side-side">Order side</a></td>
 </tr>
 <tr>
