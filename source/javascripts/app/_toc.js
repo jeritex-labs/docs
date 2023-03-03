@@ -71,8 +71,6 @@
         loaded = true;
       }
 
-      console.log("best", best);
-
       var $best = $toc.find("[href='" + best + "']").first();
       if (!$best.hasClass("active")) {
         // .active is applied to the ToC link we're currently on, and its parent <ul>s selected by tocListSelector
